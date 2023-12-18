@@ -1,0 +1,22 @@
+.navigation-container {
+    padding: 20px 50px;
+    border: 3px dashed orange;
+    margin-bottom: 40px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+    justify-content: center;    
+}
+
+.link {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: inherit;
+    border: 3px solid black;    
+}
+
+.link-active {
+    border: 3px solid orange;
+}
