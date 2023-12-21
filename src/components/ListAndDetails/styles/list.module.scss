@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .link {
+        color: inherit;
+    }
+    .link:hover {
+        color: blue;
+    }
+}

@@ -5,6 +5,7 @@ interface INav {
     links: {
         path: string
         text: string
+        id: number
     }[]
 }
 
@@ -24,7 +25,7 @@ export default function Navigation({links}: INav) {
                         return <NavLink 
                                     to={link.path}
                                     className={setActive}
-                                    key={link.path + link.text}
+                                    key={link.id}
                                 >
                                     {link.text}
                                 </NavLink>
