@@ -3,7 +3,7 @@ import { put, retry, spawn, takeLatest } from "redux-saga/effects";
 import { PayloadAction } from '@reduxjs/toolkit';
 import { setError, setPosts } from "./postsSlice";
 
-function* handleGetPostsSaga(action: PayloadAction<number>) {    
+function* handleGetPostsSaga(action: PayloadAction<number>): Generator {    
     try {
         const count = Infinity;
         const delay = 1000;
@@ -14,11 +14,11 @@ function* handleGetPostsSaga(action: PayloadAction<number>) {
     }   
 }
 
-function* watchGetStartPostsSaga() {
+function* watchGetStartPostsSaga(): Generator {
     yield takeLatest("posts/getStartPosts", handleGetPostsSaga)
 }
 
-function* watchGetPostsSaga() {
+function* watchGetPostsSaga(): Generator {
     yield takeLatest("posts/getPosts", handleGetPostsSaga)
 }
 
@@ -34,7 +34,7 @@ export async function getPostsQuery(lastPostId: number) {
                     })    
 }
 
-export default function* sagas() {
+export default function* sagas(): Generator {
     yield spawn(watchGetStartPostsSaga);
     yield spawn(watchGetPostsSaga);
 }
